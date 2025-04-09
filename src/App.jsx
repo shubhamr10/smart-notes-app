@@ -11,7 +11,10 @@ function App(){
     useEffect(()=>{
         const stored = localStorage.getItem("smart-notes");
         if(stored){
-            setNotes(JSON.parse(stored));
+            const parsedStoredNotes = JSON.parse(stored);
+            if(parsedStoredNotes && Array.isArray(parsedStoredNotes) && parsedStoredNotes.length > 0){
+                setNotes(JSON.parse(stored));
+            }
         }
     },[]);
 

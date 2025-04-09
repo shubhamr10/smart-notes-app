@@ -34,16 +34,21 @@
     text-align: right;
 }
 
-.save-note-container .save-note{
-    height: 50px;
-    width: 80px;
-    border-radius: 5px;
+.save-note-container .save-button {
+    background-color: #007bff;
+    color: white;
     border: none;
-    font-family: 'Segoe UI', sans-serif;
+    padding: 0.6rem 1.2rem;
     font-size: 1rem;
-    margin-left: auto;
-    margin-bottom: 1.5rem;
+    border-radius: 5px;
+    font-family: 'Segoe UI', sans-serif;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+.save-button:hover {
+    background-color: #0056b3;
 }
 
 .markdown-preview {
