@@ -27,6 +27,10 @@ function App(){
         setNotes((prevState) => [...prevState, note])
     }
 
+    const handleDeleteNotes = (indexToDelete) => {
+        setNotes(prevState => prevState.filter((_, index) => index !== indexToDelete));
+    }
+
     return (
         <div>
             <NoteEditor handleAddNotes={handleAddNotes}/>
@@ -34,9 +38,10 @@ function App(){
                 <h2>Saved Notes</h2>
                 {
                     notes.map((note, index) => (
-                        <div key={index} style={{ padding: '1rem', border: '1px solid #ccc', marginBottom: '1rem' }}>
+                        <div className={"note-card fade-in"} key={index}>
                             <h3>{note.title}</h3>
                             <p>{note.content}</p>
+                            <button className={"delete-button"} onClick={()=> handleDeleteNotes(index)}>Delete</button>
                         </div>
                     ))
                 }
